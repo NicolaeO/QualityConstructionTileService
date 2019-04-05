@@ -1,0 +1,10 @@
+article{
+  column-count: 3;
+  column-gap: 15px;
+  font-size: 15pt;
+
+}
+
+article img{
+  width: 100%;
+}
