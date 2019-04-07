@@ -17,10 +17,10 @@ export class HeadderComponent implements OnInit {
 
 
   slides = [
-    {img: "../../assets/images/slickSlider1.jpg"},
-    {img: "../../assets/images/slickSlider2.jpg"},
-    {img: "../../assets/images/slickSlider3.jpg"},
-    {img: "../../assets/images/slickSlider4.jpg"}
+    {img: "assets/img/slickSlider1.jpg"},
+    {img: "assets/img/slickSlider2.jpg"},
+    {img: "assets/img/slickSlider3.jpg"},
+    {img: "assets/img/slickSlider4.jpg"}
   ];
   slideConfig = {
     "slidesToShow": 1,
@@ -35,7 +35,7 @@ export class HeadderComponent implements OnInit {
 
   /*
   addSlide() {
-    this.slides.push({img: "../../assets/images/slickSlider1.jpg"})
+    this.slides.push({img: "assets/img/slickSlider1.jpg"})
   }
 
   removeSlide() {

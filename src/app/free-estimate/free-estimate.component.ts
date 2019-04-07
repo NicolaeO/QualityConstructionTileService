@@ -46,6 +46,9 @@ export class FreeEstimateComponent implements OnInit {
     this.totalMaterialPrice = (this.totalArea * 7) + (this.toalNumberOfTiles * this.tile_price);
 
     this.totalPrice = this.totalLaboutPrice + this.totalMaterialPrice;
+
+// https://www.homeadvisor.com/cost/flooring/install-ceramic-or-porcelain-tile/
+
   }
 /*
   1x2”,
