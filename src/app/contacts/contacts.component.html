@@ -1,3 +1,82 @@
-<p>
-  contacts works!
-</p>
+
+<div class="contacs">
+  <form (submit)="onSubmit(formData)" #formData="ngForm">
+    <div class="Input">
+      <label for="first_name" class="Input-label">First name</label>
+      <input type="text"
+      name="first_name"
+      class="Input-text"
+      placeholder="Your first name"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="first_name"
+      >
+    </div>
+
+    <div class="Input">
+      <label for="last_name" class="Input-label">Last Name</label>
+      <input type="text"
+      name="last_name"
+      class="Input-text"
+      placeholder="Your last name"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="last_name"
+      >
+    </div>
+
+    <div class="Input">
+      <label for="email" class="Input-label">Email</label>
+      <input type="text"
+      name="email"
+      class="Input-text"
+      placeholder="Your email address"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="email"
+      >
+    </div>
+
+    <div class="Input">
+        <label for="phone" class="Input-label">Phone</label>
+        <input type="text"
+        name="phone"
+        class="Input-text"
+        placeholder="Your phone number optional*"
+        maxlength="11"
+        [(ngModel)]="phone_number"
+        >
+      </div>
+
+    <div class="Input">
+      <label for="text" class="Input-label">Message</label>
+      <textarea
+      rows="3"
+      name="text"
+      class="Input-text"
+      placeholder="Your message"
+      required
+      minlength="10"
+      [(ngModel)]="text">
+      </textarea>
+    </div>
+
+    <div class="Input">
+      <input type="submit">
+    </div>
+  </form>
+
+<div class="my-contact">
+    <h3>Reach out directly</h3>
+
+    <div class="contact-data">
+        <a href="tel:2538022635">&#9990; (253) - 802 - 2635</a>
+    </div>
+    <div class="contact-data">
+        <a href="mailto:constructiontile@gmail.com">&#64; constructiontile@gmail.com</a>
+    </div>
+</div>
+</div>

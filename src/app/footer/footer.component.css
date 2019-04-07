@@ -10,10 +10,27 @@ footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-top:20px;
+}
+
+.footer-container{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: #555;
+  height: auto;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top:20px;
+
 }
 
 .div-cell {
-  width: 30%;
+  /* width: 30%; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,6 +39,7 @@ footer {
   justify-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
+  flex:1;
 }
 
 .logo img {
@@ -82,7 +100,14 @@ footer .social {
 
 
 @media only screen and (max-width:580px) {
-  footer {
+  /* footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  } */
+
+  .footer-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -104,6 +129,10 @@ footer .social {
     -ms-flex-line-pack: center;
     align-content: center;
   }
+  .social img{
+    width:50px;
+    height:50px;
+  }
 }
 
 
@@ -117,6 +146,7 @@ footer .social {
     -ms-flex-pack: center;
     justify-content: center;
     margin-top: 10px;
+    flex: none;
   }
 
   .social {
@@ -131,8 +161,15 @@ footer .social {
     align-content: center;
   }
 
-  footer {
-    /* flex-direction: column; */
+  /* footer {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+    align-content: center
+  } */
+
+
+  .footer-container {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     -ms-flex-line-pack: center;
@@ -141,20 +178,34 @@ footer .social {
 
 }
 
+
+
 @media only screen and (min-width:1024px) {
   footer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    width: 100%;
   }
 
   .div-cell {
-    width: 20%;
     -ms-flex-line-pack: center;
     align-content: center;
+    flex:1;
   }
-  .contacts{
-    width: 25%;
+
+
+  .footer-container{
+    width: 100%;
+  }
+
+}
+
+
+@media only screen and (min-width:1300px) {
+  .footer-container{
+    width: 80%;
   }
 }
+

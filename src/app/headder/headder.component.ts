@@ -12,8 +12,7 @@ export class HeadderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 
 
@@ -62,13 +61,20 @@ export class HeadderComponent implements OnInit {
 
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
+  displayMenu() {
+    if($("#mainMenu").css("display") == "none"){
+      $("#mainMenu").css("display", "block");
+      $("my-slider").css("margin-top", "0");
+    }
+    else{
+      $("#mainMenu").css("display", "none");
+      $("my-slider").css("margin-top", "25px");
+    }
   }
-}
+
+  windowResize(e){
+    $("#mainMenu").css("display", "");
+
+  }
 
 }

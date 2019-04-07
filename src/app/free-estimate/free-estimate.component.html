@@ -1,0 +1,103 @@
+
+<div class="contacs">
+    <form (submit)="onSubmit(formData)"
+    (change)="onChange(formData)" #formData="ngForm">
+
+      <div class="Input">
+        <label for="surface-length" class="Input-label">Surface  Length in feet</label>
+        <input type="number"
+        name="surface-length"
+        class="Input-text"
+        placeholder="Surface length"
+        required
+        min="1"
+        [(ngModel)]="surface_length"
+        >
+      </div>
+
+      <div class="Input">
+        <label for="surface-width" class="Input-label">Surface Width in feet</label>
+        <input type="number"
+        name="surface-width"
+        class="Input-text"
+        placeholder="Surface width"
+        required
+        min="1"
+        [(ngModel)]="surface_width"
+        >
+      </div>
+
+      <div class="Input">
+        <label for="tile-width" class="Input-label">Tile width</label>
+        <input type="number"
+        name="tile-width"
+        class="Input-text"
+        placeholder="Tile width that you want to use"
+        required
+        min="1"
+        [(ngModel)]="tile_width"
+        >
+      </div>
+
+      <div class="Input">
+          <label for="tile-length" class="Input-label">Tile length</label>
+          <input type="number"
+          name="tile-length"
+          class="Input-text"
+          placeholder="Tile length that you want to use"
+          required
+          min="1"
+          [(ngModel)]="tile_length"
+          >
+        </div>
+
+        <div class="Input">
+            <label for="tile-price" class="Input-label">Tile price</label>
+            <input type="number"
+            name="tile-price"
+            class="Input-text"
+            placeholder="Price per tile that you want to use"
+            required
+            min="1"
+            [(ngModel)]="tile_price"
+            >
+          </div>
+
+        <div>
+            Your total area is {{ totalArea }} square feet.<br>
+            You approximately need {{ toalNumberOfTiles }} tiles at given size for the area.<br>
+            Based on nation average cost for labour your price will be {{ totalLaboutPrice }} us dolars.<br>
+            Based on out calculations and your price per tile material cost will be {{ totalMaterialPrice }} us dolars including other materials based on nation average price per sqft.<br>
+            <h3> Total price will be {{ totalPrice }}</h3>
+          </div>
+          {{ totalArea }}
+
+      <div class="Input">
+        <label for="text" class="Input-label">Message</label>
+        <textarea
+        rows="3"
+        name="text"
+        class="Input-text"
+        placeholder="Your message"
+        required
+        minlength="10"
+        [(ngModel)]="text">
+        </textarea>
+      </div>
+
+      <div class="Input">
+        <input type="submit">
+      </div>
+    </form>
+
+  <div class="my-contact">
+      <h3>Reach out directly</h3>
+
+      <div class="contact-data">
+          <a href="tel:2538022635">&#9990; (253) - 802 - 2635</a>
+      </div>
+      <div class="contact-data">
+          <a href="mailto:constructiontile@gmail.com">&#64; constructiontile@gmail.com</a>
+      </div>
+  </div>
+  </div>

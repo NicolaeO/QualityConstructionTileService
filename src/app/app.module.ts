@@ -13,6 +13,8 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { FormsModule }   from '@angular/forms';
+import { FreeEstimateComponent } from './free-estimate/free-estimate.component';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import { ProjectsComponent } from './projects/projects.component';
     AboutComponent,
     FooterComponent,
     ContactsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    FreeEstimateComponent
   ],
   imports: [
     BrowserModule,
     routing,
-    SlickCarouselModule
+    SlickCarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

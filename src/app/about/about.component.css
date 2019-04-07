@@ -1,0 +1,48 @@
+
+article{
+  column-gap: 15px;
+  font-size: 15pt;
+
+}
+
+article img{
+  width: 100%;
+}
+.about{
+  display:flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+hr{
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  width:100%;
+}
+
+@media only screen and (max-width: 580px){
+  article{
+    column-count: 1;
+  }
+}
+
+@media only screen and (min-width: 581px){
+  article{
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  article{
+    column-count: 3;
+  }
+}
+h2{
+  display:inline-block;
+  margin: 0 auto;
+}
