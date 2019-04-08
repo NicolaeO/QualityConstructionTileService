@@ -1,5 +1,5 @@
 
-<div class="contacs">
+<div class="free-estimate">
     <form (submit)="onSubmit(formData)"
     (change)="onChange(formData)" #formData="ngForm">
 
@@ -28,7 +28,7 @@
       </div>
 
       <div class="Input">
-        <label for="tile-width" class="Input-label">Tile width</label>
+        <label for="tile-width" class="Input-label">Tile width in inch</label>
         <input type="number"
         name="tile-width"
         class="Input-text"
@@ -40,7 +40,7 @@
       </div>
 
       <div class="Input">
-          <label for="tile-length" class="Input-label">Tile length</label>
+          <label for="tile-length" class="Input-label">Tile length in inch</label>
           <input type="number"
           name="tile-length"
           class="Input-text"
@@ -63,29 +63,20 @@
             >
           </div>
 
-        <div>
-            Your total area is {{ totalArea }} square feet.<br>
-            You approximately need {{ toalNumberOfTiles }} tiles at given size for the area.<br>
-            Based on nation average cost for labour your price will be {{ totalLaboutPrice }} us dolars.<br>
-            Based on out calculations and your price per tile material cost will be {{ totalMaterialPrice }} us dolars including other materials based on nation average price per sqft.<br>
-            <h3> Total price will be {{ totalPrice }}</h3>
-          </div>
-          {{ totalArea }}
-
-      
-      <div class="Input">
-        <input type="submit">
+      <div class="Input input-submit">
+        <input type="submit" value="Get free estimate">
       </div>
     </form>
 
-  <div class="my-contact">
-      <h3>Reach out directly</h3>
+    <div class="estimate-data">
+      <h3>This is just an estimate based on nation wide average. If you need a more detailed and personalized estimate please contact us and we will be more than happy to help.</h3>
 
-      <div class="contact-data">
-          <a href="tel:2538022635">&#9990; (253) - 802 - 2635</a>
-      </div>
-      <div class="contact-data">
-          <a href="mailto:constructiontile@gmail.com">&#64; constructiontile@gmail.com</a>
-      </div>
-  </div>
+      <p>Total area is: <strong>{{ totalArea }}</strong> square feet.</p>
+      <p>Total number of tiles: <strong>{{ toalNumberOfTiles }}</strong> at given size.</p>
+      <p>Aproximate labour cost: <strong>${{ totalLaboutPrice }}</strong>.</p>
+      <p>Aproximate materials cost: <strong>${{ totalMaterialPrice }}</strong> this is including other materials based on nation wide average price per square feet.</p>
+      <h3> Your Total price will be {{ totalPrice }}</h3>
+    </div>
+
+
   </div>
