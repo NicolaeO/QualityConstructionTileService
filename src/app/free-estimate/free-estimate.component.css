@@ -50,6 +50,13 @@
     color: #555;
     font-size: 13pt;
   }
+
+  .chart-main-container{
+    flex-direction: column;
+    align-content: center;
+  }
+
+
 }
 /* ========================== END PHONE ==================== */
 
@@ -141,6 +148,7 @@
     margin: 0;
     padding: 10px;
   }
+  
 
 }
 /*=============================== END DESKTOP ======================*/
@@ -223,4 +231,86 @@ h3{
 
 .input-submit{
   text-align:center;
+}
+
+
+
+
+
+.chart-container, .chart-legend{
+    flex: 1;
+    max-width: 300px;
+    min-width: 250px;
+    display:none;
+    align-self:center;
+}
+
+
+
+.chart {
+  background:
+      conic-gradient(#F15854 90deg, 
+      #5DA5DA 90deg 180deg,
+      #DECF3F 180deg 275deg,
+      #4D4D4D 360deg
+    ); 
+  border-radius: 50%;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  float: left;
+  padding-right: 20px;
+}
+
+.key {
+  width: 100%;
+  float: right;
+  list-style: none;
+  display: table;
+  border-collapse: separate;
+  > li {
+    display: table-row;
+    > * {
+      display: table-cell;
+      border-bottom: 12px solid white;
+    }
+  }
+}
+.key li{
+  margin:20px;
+}
+
+.percent {
+  color: white;
+  padding: 10px 2px;
+  text-shadow: 0 0 1px black;
+  text-align: center;
+}
+.choice {
+  padding-left: 10px;
+}
+
+.red {
+  background: #F15854;
+}
+.gray {
+  background: #4D4D4D;
+}
+.blue {
+  background: #5DA5DA;
+}
+.yellow {
+  background: #DECF3F;
+}
+.purple {
+  background: #B276B2;
+}
+.orange {
+  background: #FAA43A;
+}
+
+
+.chart-main-container{
+  display:flex;
+  justify-content: center;
 }

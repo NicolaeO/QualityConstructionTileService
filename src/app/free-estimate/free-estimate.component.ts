@@ -1,12 +1,14 @@
+// import { NgForm } from '@angular/forms';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-free-estimate',
   templateUrl: './free-estimate.component.html',
   styleUrls: ['./free-estimate.component.css']
 })
+
 export class FreeEstimateComponent implements OnInit {
 
   surface_length: number;
@@ -14,74 +16,88 @@ export class FreeEstimateComponent implements OnInit {
 
   tile_length: number;
   tile_width: number;
-  tile_price: number;
+  tile_price_SQFT: number;
 
+  totalTilePrice: number;
+  totalCementPrice: number;
+  totalOtherPrice: number;
   totalArea: number;
-  toalNumberOfTiles: number;
-  totalLaboutPrice: number;
+  totalNumberOfTiles: number;
+  totalLabourPrice: number;
   totalMaterialPrice: number;
   totalPrice: number;
 
-  constructor(private _form: FormsModule) { }
+  labourPriceSQFT: number;
+  cementPriceSQFT: number;
+  otherPriceSQFT: number;
+  gradient: string;
+
+  constructor() { }
 
   ngOnInit() {
     this.tile_length = 1;
     this.tile_width = 1;
-  // this.height = 0;
-  // this.width = 0;
-  // this.totalArea = 0;
-  }
+    this.labourPriceSQFT = 15;
+    this.cementPriceSQFT = 5;
+    this.otherPriceSQFT = 1;
+    this.totalPrice = 0;
 
-  onChange(form: NgForm){
-    this.totalArea = this.surface_length * this.surface_width;
   }
 
   onSubmit(form: NgForm){
+    
     this.totalArea = this.surface_length * this.surface_width;
 
-    this.toalNumberOfTiles = (this.totalArea * 144) / (this.tile_length*this.tile_width);
+    this.totalNumberOfTiles = Math.ceil((this.totalArea * 144) / (this.tile_length * this.tile_width));
 
-    this.totalLaboutPrice = this.totalArea * 15;
+    this.totalTilePrice = Math.ceil(this.tile_price_SQFT * this.totalArea);
 
-    this.totalMaterialPrice = (this.totalArea * 7) + (this.toalNumberOfTiles * this.tile_price);
+    this.totalCementPrice = Math.ceil(this.totalArea * this.cementPriceSQFT);
+    
+    this.totalOtherPrice = Math.ceil(this.totalArea * this.otherPriceSQFT);
+    
+    this.totalLabourPrice = Math.ceil(this.totalArea * this.labourPriceSQFT);
 
-    this.totalPrice = this.totalLaboutPrice + this.totalMaterialPrice;
+    this.totalMaterialPrice = this.totalTilePrice + this.totalCementPrice + this.totalOtherPrice;
+
+    this.totalPrice = this.totalLabourPrice + this.totalMaterialPrice;
 
 // https://www.homeadvisor.com/cost/flooring/install-ceramic-or-porcelain-tile/
 
+
+    let cementPercent = this.totalCementPrice * 100 /this.totalPrice;
+    let labourPercent = this.totalLabourPrice * 100 / this.totalPrice;
+    let tilesPercent = this.totalTilePrice * 100 / this.totalPrice;
+    let otherPercent = this.totalOtherPrice * 100 / this.totalPrice;
+
+    let cementDeg = cementPercent * 360 / 100;
+    let labourDeg = labourPercent * 360 / 100;
+    let tilesDeg = tilesPercent * 360 / 100;
+    let otherDeg = otherPercent * 360 / 100;
+
+    // let gradient = `conic-gradient(
+    //   #F15854 ${cementPercent}%, 
+    //   #5DA5DA 0 ${labourPercent}%, 
+    //   #DECF3F 0 ${tilesPercent}%, 
+    //   #4D4D4D 0)`;
+
+
+    let gradient = `conic-gradient(
+      #F15854 ${cementDeg}deg, 
+      #5DA5DA ${cementDeg}deg ${cementDeg + labourDeg}deg, 
+      #DECF3F ${labourDeg + cementDeg}deg ${labourDeg + cementDeg + tilesDeg}deg, 
+      #4D4D4D ${tilesDeg + cementDeg + labourDeg}deg )`;
+// ${tilesDeg + cementDeg + labourDeg + other}deg
+
+    console.log(gradient):
+
+    $("#myChart").css("background", gradient);
+    $("#chartDivContainer").css("display", 'inline-block');
+    $("#chartDivLegend").css("display", 'inline-block');
+    
+    
+
+
   }
-/*
-  1x2”,
-  1x3”
-  1x4”
-  1x6”
 
-  2x3”
-  2x4”
-  2x5”
-  2x6”
-  2x8”
-  2x12”
-
-  3x4”
-  3x5”
-  3x6”
-  3x8”
-  3x12”
-
-  4x4
-  4x5”
-  4x5”
-  4x6”
-  4x8”
-  4x12”
-  4x16”
-
-  5x2”
-  5x3”
-  5x4
-  5x6”
-  5x8”
-
-  */
 }

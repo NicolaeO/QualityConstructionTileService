@@ -30,7 +30,7 @@ export class HeadderComponent implements OnInit {
     "autoplaySpeed": 5000,
     "cssEase": "ease-out",
     "dots": true,
-    arrows:false
+    "arrows": false
   };
 
   /*
