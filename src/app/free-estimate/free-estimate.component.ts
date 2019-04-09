@@ -89,15 +89,9 @@ export class FreeEstimateComponent implements OnInit {
       #4D4D4D ${tilesDeg + cementDeg + labourDeg}deg )`;
 // ${tilesDeg + cementDeg + labourDeg + other}deg
 
-    console.log(gradient):
-
     $("#myChart").css("background", gradient);
     $("#chartDivContainer").css("display", 'inline-block');
     $("#chartDivLegend").css("display", 'inline-block');
-    
-    
-
-
   }
 
 }

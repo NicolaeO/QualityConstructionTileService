@@ -5,13 +5,13 @@ TODO2 in portfolio make a css rule for rows that will have a image on one side a
 
 DONE3 modify contact form and make it responsive
 
-TODO4 for the estimate add a char form jqueryUI
+DONE4 for the estimate add a chart
 
 DONE5 do same responsive for the estimate
 
 TODO6 un omulet in menu bar.
 
-TODO7 add working horus.
+TODO7 add working hours.
 
 TODO8 We activate in area and a map on home.
 

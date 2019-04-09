@@ -13,11 +13,19 @@ article img{
   article{
     column-count: 1;
   }
+  .hours{
+    text-align:center;
+    column-count:1;
+  }
 }
 
 @media only screen and (min-width: 581px){
   article{
     column-count: 2;
+  }
+  .hours{
+    text-align: center;
+    column-count:2;
   }
 }
 
@@ -25,4 +33,19 @@ article img{
   article{
     column-count: 3;
   }
+  .hours{
+    text-align:center;
+    column-count:2;
+  }
+}
+h2{
+  text-align: center;
+}
+
+a{
+  text-decoration:none;
+  color: #444;
+}
+a:hover{
+  color:#000;
 }
