@@ -1,119 +1,87 @@
-
-
 <div class="free-estimate">
-    <form (submit)="onSubmit(formData)"
-    #formData="ngForm">
+  <form (submit)="onSubmit(formData)" #formData="ngForm">
 
-      <div class="Input">
-        <label for="surface-length" class="Input-label">Surface  Length in feet</label>
-        <input type="number"
-        name="surface-length"
-        class="Input-text"
-        placeholder="Surface length"
-        required
-        min="1"
-        [(ngModel)]="surface_length"
-        >
-      </div>
+    <div class="Input">
+      <label for="surface-length" class="Input-label">Surface Length in feet</label>
+      <input type="number" name="surface-length" class="Input-text" placeholder="Surface length" required min="1"
+        [(ngModel)]="surface_length">
+    </div>
 
-      <div class="Input">
-        <label for="surface-width" class="Input-label">Surface Width in feet</label>
-        <input type="number"
-        name="surface-width"
-        class="Input-text"
-        placeholder="Surface width"
-        required
-        min="1"
-        [(ngModel)]="surface_width"
-        >
-      </div>
+    <div class="Input">
+      <label for="surface-width" class="Input-label">Surface Width in feet</label>
+      <input type="number" name="surface-width" class="Input-text" placeholder="Surface width" required min="1"
+        [(ngModel)]="surface_width">
+    </div>
 
-      <div class="Input">
-        <label for="tile-width" class="Input-label">Tile width in inch</label>
-        <input type="number"
-        name="tile-width"
-        class="Input-text"
-        placeholder="Tile width that you want to use"
-        required
-        min="1"
-        [(ngModel)]="tile_width"
-        >
-      </div>
+    <div class="Input">
+      <label for="tile-width" class="Input-label">Tile width in inch</label>
+      <input type="number" name="tile-width" class="Input-text" placeholder="Tile width that you want to use" required
+        min="1" [(ngModel)]="tile_width">
+    </div>
 
-      <div class="Input">
-          <label for="tile-length" class="Input-label">Tile length in inch</label>
-          <input type="number"
-          name="tile-length"
-          class="Input-text"
-          placeholder="Tile length that you want to use"
-          required
-          min="1"
-          [(ngModel)]="tile_length"
-          >
-        </div>
+    <div class="Input">
+      <label for="tile-length" class="Input-label">Tile length in inch</label>
+      <input type="number" name="tile-length" class="Input-text" placeholder="Tile length that you want to use" required
+        min="1" [(ngModel)]="tile_length">
+    </div>
 
-        <div class="Input">
-            <label for="tile-price" class="Input-label">Price per square feet (Tiles)</label>
-            <input type="number"
-            name="tile-price"
-            class="Input-text"
-            placeholder="Price per tile that you want to use"
-            required
-            min="1"
-            [(ngModel)]="tile_price_SQFT"
-            >
-          </div>
+    <div class="Input">
+      <label for="tile-price" class="Input-label">Price per square feet (Tiles)</label>
+      <input type="number" name="tile-price" class="Input-text" placeholder="Price per tile that you want to use"
+        required min="1" [(ngModel)]="tile_price_SQFT">
+    </div>
 
-      <div class="Input input-submit">
-        <input type="submit" value="Get free estimate">
-      </div>
-    </form>
+    <div class="Input input-submit">
+      <input type="submit" value="Get free estimate">
+    </div>
+  </form>
 
 
   <div class="estimate-data" *ngIf="totalPrice">
-      <h3>This is just an estimate based on nation wide average. If you need a more detailed and personalized estimate please contact us and we will be more than happy to help.</h3>
+    <h3>This is just an estimate based on nation wide average. If you need a more detailed and personalized estimate
+      please contact us and we will be more than happy to help.</h3>
 
-      <p>Total area is: <strong>{{ totalArea }}</strong> square feet.</p>
-      <p>Total number of tiles: <strong>{{ totalNumberOfTiles }}</strong> at given size.</p>
-      <p>Aproximate labour cost: <strong>${{ totalLabourPrice }}</strong>.</p>
-      <p>Aproximate materials cost: <strong>${{ totalMaterialPrice }}</strong> this is including other materials based on nation wide average price per square feet.</p>
-      <h3> Your Total price will be ${{ totalPrice }}</h3>
-
-
-      </div>
-
+    <p>Total area is: <strong>{{ totalArea }}</strong> square feet.</p>
+    <p>Total number of tiles: <strong>{{ totalNumberOfTiles }}</strong> at given size.</p>
+    <p>Aproximate labour cost: <strong>${{ totalLabourPrice }}</strong>.</p>
+    <p>Aproximate materials cost: <strong>${{ totalMaterialPrice }}</strong> this is including other materials based on
+      nation wide average price per square feet.</p>
+    <h3> Your Total price will be ${{ totalPrice }}</h3>
 
 
-<!-- CHART FOR DISPLAING -->
-<div class="chart-main-container">
-  <div class="chart-container" id="chartDivContainer">
-
-    <div class="chart" id="myChart"></div>
   </div>
 
-  <div class="chart-legend" id="chartDivLegend">
-  <ul class="key">
-    <li>
-      <strong class="percent red">${{ totalCementPrice }}</strong>
-      <span class="choice">Price for the cement.</span>
-    </li>
-    <li>
-      <strong class="percent blue">${{ totalLabourPrice }}</strong>
-      <span class="choice">Price for the labour.</span>
-    </li>
-    <li>
-      <strong class="percent yellow">${{ totalTilePrice }}</strong>
-      <span class="choice">Price for the tiles.</span>
-    </li>
-    <li>
-      <strong class="percent gray">${{ totalOtherPrice }}</strong>
-      <span class="choice">Price for other expences.</span>
-    </li>
 
-  </ul>
 
+  <!-- CHART FOR DISPLAING -->
+  <div class="chart-main-container">
+    <div class="chart-container" id="chartDivContainer">
+      <div class="chart" id="myChart"></div>
+    </div>
+
+    <div class="chart-legend" id="chartDivLegend">
+      <ul class="key">
+        <li>
+          <strong class="percent red">${{ totalCementPrice }}</strong>
+          <span class="choice">Price for the cement.</span>
+        </li>
+        <li>
+          <strong class="percent blue">${{ totalLabourPrice }}</strong>
+          <span class="choice">Price for the labour.</span>
+        </li>
+        <li>
+          <strong class="percent yellow">${{ totalTilePrice }}</strong>
+          <span class="choice">Price for the tiles.</span>
+        </li>
+        <li>
+          <strong class="percent gray">${{ totalOtherPrice }}</strong>
+          <span class="choice">Price for other expences.</span>
+        </li>
+
+      </ul>
+
+    </div>
   </div>
+  <!-- CHART FOR DISPLAING -->
+
 </div>
-<!-- CHART FOR DISPLAING -->
-
-  </div>
