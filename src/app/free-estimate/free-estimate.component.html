@@ -1,7 +1,7 @@
 
 
 <div class="free-estimate">
-    <form (submit)="onSubmit(formData)" 
+    <form (submit)="onSubmit(formData)"
     #formData="ngForm">
 
       <div class="Input">
@@ -79,10 +79,10 @@
       <p>Aproximate materials cost: <strong>${{ totalMaterialPrice }}</strong> this is including other materials based on nation wide average price per square feet.</p>
       <h3> Your Total price will be ${{ totalPrice }}</h3>
 
-    
-      </div> 
- 
-  
+
+      </div>
+
+
 
 <!-- CHART FOR DISPLAING -->
 <div class="chart-main-container">
@@ -94,22 +94,22 @@
   <div class="chart-legend" id="chartDivLegend">
   <ul class="key">
     <li>
-      <strong class="percent red">{{ totalCementPrice }}</strong>
+      <strong class="percent red">${{ totalCementPrice }}</strong>
       <span class="choice">Price for the cement.</span>
     </li>
     <li>
-      <strong class="percent blue">{{ totalLabourPrice }}</strong>
+      <strong class="percent blue">${{ totalLabourPrice }}</strong>
       <span class="choice">Price for the labour.</span>
     </li>
     <li>
-      <strong class="percent yellow">{{ totalTilePrice }}</strong>
+      <strong class="percent yellow">${{ totalTilePrice }}</strong>
       <span class="choice">Price for the tiles.</span>
     </li>
     <li>
-      <strong class="percent gray">{{ totalOtherPrice }}</strong>
+      <strong class="percent gray">${{ totalOtherPrice }}</strong>
       <span class="choice">Price for other expences.</span>
     </li>
-    
+
   </ul>
 
   </div>
