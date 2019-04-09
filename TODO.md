@@ -11,7 +11,7 @@ DONE5 do same responsive for the estimate
 
 TODO6 un omulet in menu bar.
 
-TODO7 add working hours.
+DONE7 add working hours.
 
 TODO8 We activate in area and a map on home.
 
