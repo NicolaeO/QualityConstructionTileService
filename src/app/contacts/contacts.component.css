@@ -216,3 +216,8 @@ h3{
 .input-submit{
   text-align:center;
 }
+
+
+#sent-succes{
+  color: lightcoral;
+}

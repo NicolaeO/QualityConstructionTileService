@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng build; cp myConfig.js dist/myConfig.js; cp app.js dist/app.js; node dist/app.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,9 +20,13 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@sendgrid/mail": "^6.3.1",
     "core-js": "^2.5.4",
+    "dotenv": "^7.0.0",
     "jquery": "^3.3.1",
+    "morgan": "^1.9.1",
     "ngx-slick-carousel": "^0.4.4",
+    "nodemailer": "^6.1.0",
     "rxjs": "6.0.0",
     "slick-carousel": "^1.8.1",
     "zone.js": "^0.8.26"

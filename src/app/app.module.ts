@@ -15,6 +15,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FormsModule }   from '@angular/forms';
 import { FreeEstimateComponent } from './free-estimate/free-estimate.component';
+import { EmailSenderService } from './email-sender.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,9 +34,10 @@ import { FreeEstimateComponent } from './free-estimate/free-estimate.component';
     BrowserModule,
     routing,
     SlickCarouselModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmailSenderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

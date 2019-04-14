@@ -109,3 +109,15 @@ span{
     max-height: 400px;
   }
 }
+
+
+/* this is just for fun and not implemented
+
+.back-image{
+  background-image: url("../../assets/img/slickSlider1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter:brightness(70%);
+}
+
+*/
