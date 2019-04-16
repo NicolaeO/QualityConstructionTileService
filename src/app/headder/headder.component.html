@@ -1,15 +1,32 @@
-<div class="my-container">
+<div class="my-container" >
+
+  <div class="head-logo">
+    <div class="hl1">
+      <a [routerLink]="['/home']">
+        <img src="assets/img/logo.png" alt="Quality construction tile service logo">
+      </a>
+    </div>
+    <div  class="hl2">
+      <h1>Quality construction tile service</h1>
+      <h3>best service in the nation! Call us now: (253)-802-2635</h3>
+    </div>
+  </div>
+
+
   <div id="showmenu" (click)="displayMenu()">
     <img src="assets/img/showMenu.svg" alt="Display menu">
   </div>
-  <header class="my-header" id="mainMenu" (window:resize)="windowResize($event)">
-      <div><a [routerLink]="['/home']">Home</a></div>
-      <div><a [routerLink]="['/about']">About</a></div>
-      <div><a [routerLink]="['/projects']">Portfolio</a></div>
-      <div><a [routerLink]="['/freeestimate']">Free estimate</a></div>
-      <div><a [routerLink]="['/contacts']">Contact us</a></div>
+
+  <header class="my-header" id="mainMenu" (window:resize)="hideMenu($event)">
+        <a class="menu-item" [routerLink]="['/home']" (click)="hideMenu($event)">Home</a>
+        <a class="menu-item" [routerLink]="['/about']" (click)="hideMenu($event)">About</a>
+        <a class="menu-item" [routerLink]="['/projects']" (click)="hideMenu($event)">Portfolio</a>
+        <a class="menu-item" [routerLink]="['/freeestimate']" (click)="hideMenu($event)">Free estimate</a>
+        <a class="menu-item" [routerLink]="['/contacts']" (click)="hideMenu($event)">Contact us</a>
   </header>
+
   <br>
+
   <div class="row wrapper" id="my-slider">
     <ngx-slick-carousel class="carousel"
                             #slickModal="slick-carousel"

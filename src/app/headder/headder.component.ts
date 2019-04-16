@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 
 @Component({
@@ -44,37 +44,63 @@ export class HeadderComponent implements OnInit {
   */
 
   slickInit(e) {
-    console.log('slick initialized');
+    //DO NOTHING
+    // console.log('slick initialized');
   }
 
   breakpoint(e) {
-    console.log('breakpoint');
+    //DO NOTHING
+    // console.log('breakpoint');
   }
 
   afterChange(e) {
-    console.log('afterChange');
+    //DO NOTHING
+    // console.log('afterChange');
   }
 
   beforeChange(e) {
-    console.log('beforeChange');
+    //DO NOTHING
+    // console.log('beforeChange');
   }
 
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
   displayMenu() {
-    if($("#mainMenu").css("display") == "none"){
-      $("#mainMenu").css("display", "block");
-      $("my-slider").css("margin-top", "0");
+
+    if($("#mainMenu").css("visibility") == "hidden"){
+      $("#mainMenu").css("visibility", "visible");
+      $("#mainMenu").css("opacity", "1");
     }
     else{
-      $("#mainMenu").css("display", "none");
-      $("my-slider").css("margin-top", "25px");
+      $("#mainMenu").css("visibility", "hidden");
+      $("#mainMenu").css("opacity", "0");
+    }
+
+
+  }
+
+  hideMenu(e){
+    console.log($(document).width());
+    if($(document).width() < 1024 && $("#mainMenu").css("visibility") == "visible"){
+      $("#mainMenu").css("visibility", "hidden");
+      $("#mainMenu").css("opacity", "0");
+      console.log("Hide Menu");
+    }
+
+    if($(document).width() >= 1024 && $("#mainMenu").css("visibility") == "hidden"){
+      $("#mainMenu").css("visibility", "visible");
+      $("#mainMenu").css("opacity", "1");
+      console.log("Show Menu");
+    }
+
+  }
+
+  /*
+  @HostListener('document:click', ['$event']) clickedOutside($event){
+    if(event.target != $("#mainMenu") && event.target != $("#showmenu")) {
+      $("#mainMenu").css("visibility", "hidden");
+      console.log("Clicked outside");
     }
   }
-
-  windowResize(e){
-    $("#mainMenu").css("display", "");
-
-  }
-
+  */
 }
