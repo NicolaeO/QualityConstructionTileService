@@ -8,7 +8,7 @@
     </div>
     <div  class="hl2">
       <h1>Quality construction tile service</h1>
-      <h3>best service in the nation! Call us now: (253)-802-2635</h3>
+      <h3>best service in the nation! Call us now: <a href="tel:2538022635">&#9990; (253)-802-2635</a></h3>
     </div>
   </div>
 
@@ -18,11 +18,26 @@
   </div>
 
   <header class="my-header" id="mainMenu" (window:resize)="hideMenu($event)">
-        <a class="menu-item" [routerLink]="['/home']" (click)="hideMenu($event)">Home</a>
-        <a class="menu-item" [routerLink]="['/about']" (click)="hideMenu($event)">About</a>
-        <a class="menu-item" [routerLink]="['/projects']" (click)="hideMenu($event)">Portfolio</a>
-        <a class="menu-item" [routerLink]="['/freeestimate']" (click)="hideMenu($event)">Free estimate</a>
-        <a class="menu-item" [routerLink]="['/contacts']" (click)="hideMenu($event)">Contact us</a>
+        <a class="menu-item"
+        routerLinkActive="active-menu-item"
+        [routerLink]="['/home']"
+        (click)="hideMenu($event)">Home</a>
+        <a class="menu-item"
+        routerLinkActive="active-menu-item"
+        [routerLink]="['/about']"
+        (click)="hideMenu($event)">About</a>
+        <a class="menu-item"
+        routerLinkActive="active-menu-item"
+        [routerLink]="['/projects']"
+        (click)="hideMenu($event)">Portfolio</a>
+        <a class="menu-item"
+        routerLinkActive="active-menu-item"
+        [routerLink]="['/freeestimate']"
+        (click)="hideMenu($event)">Free estimate</a>
+        <a class="menu-item"
+        routerLinkActive="active-menu-item"
+        [routerLink]="['/contacts']"
+        (click)="hideMenu($event)">Contact us</a>
   </header>
 
   <br>

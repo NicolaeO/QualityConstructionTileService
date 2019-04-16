@@ -51,10 +51,6 @@ a:hover{
 }
 
 
-
-
-
-
 img{
   -webkit-box-flex:1;
       -ms-flex:1;
@@ -68,7 +64,8 @@ img{
 }
 
 img:hover{
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+          -webkit-box-shadow: 5px 5px 10px grey;
+                  box-shadow: 5px 5px 10px grey;
 }
